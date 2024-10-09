@@ -19,7 +19,7 @@ def sql_chatbot():
 
 @app.route('/pdf-narrator')
 def pdf_narrator():
-    return "This will be the PDF Narrator page"  # Placeholder for the PDF Narrator page
+    return redirect("https://gen-ai-web-app.azurewebsites.net/document_insight_via_chat")
 
 if __name__ == '__main__':
     app.run(debug=True)
