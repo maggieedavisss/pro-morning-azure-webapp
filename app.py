@@ -1,32 +1,25 @@
 import os
-
-from flask import (Flask, redirect, render_template, request,
-                   send_from_directory, url_for)
+from flask import Flask, render_template, send_from_directory, url_for
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def index():
-   print('Request for index page received')
-   return render_template('index.html')
+    print('Request for index page received')
+    return render_template('index.html')  # Render the updated index.html with the buttons
 
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
-@app.route('/hello', methods=['POST'])
-def hello():
-   name = request.form.get('name')
+@app.route('/sql-chatbot')
+def sql_chatbot():
+    return "This will be the SQL Chatbot page"  # Placeholder for the SQL Chatbot page
 
-   if name:
-       print('Request for hello page received with name=%s' % name)
-       return render_template('hello.html', name = name)
-   else:
-       print('Request for hello page received with no name or blank name -- redirecting')
-       return redirect(url_for('index'))
-
+@app.route('/pdf-narrator')
+def pdf_narrator():
+    return "This will be the PDF Narrator page"  # Placeholder for the PDF Narrator page
 
 if __name__ == '__main__':
     app.run(debug=True)
