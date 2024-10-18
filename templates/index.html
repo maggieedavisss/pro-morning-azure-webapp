@@ -7,6 +7,8 @@
     <title>Morningstar Demos</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    
+    <!-- Inline CSS -->
     <style>
         /* Custom styling for header background */
         body {
@@ -20,14 +22,15 @@
             color: white;
         }
 
-        header img {
-            max-width: 150px;
+        .logo {
+            width: 100px; /* Same size for all logos */
             height: auto;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
+        /* Add some space between logos */
+        .mx-3 {
+            margin-left: 1rem;
+            margin-right: 1rem;
         }
 
         .content {
@@ -48,21 +51,11 @@
             border: none;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 12px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .card h5 {
             font-size: 1.25rem;
             font-weight: bold;
-        }
-
-        .card p {
-            color: #6c757d;
         }
 
         footer {
@@ -72,6 +65,7 @@
             color: white;
             text-align: center;
         }
+
     </style>
 </head>
 
@@ -79,7 +73,11 @@
 
     <!-- Header Section -->
     <header class="text-center">
-        <img src="{{ url_for('static', filename='images/morningstar-icon.svg') }}" alt="Morningstar Logo">
+        <div class="d-flex justify-content-center align-items-center">
+            <img src="{{ url_for('static', filename='images/morningstar-icon.svg') }}" alt="Morningstar Logo" class="logo">
+            <img src="{{ url_for('static', filename='images/protiviti-icon.svg') }}" alt="Protiviti Logo" class="logo mx-3">
+            <img src="{{ url_for('static', filename='images/microsoft-icon.svg') }}" alt="Microsoft Logo" class="logo">
+        </div>
         <h1>Welcome to Our Demos</h1>
         <p class="lead">Explore the power of AI through our interactive tools.</p>
     </header>
