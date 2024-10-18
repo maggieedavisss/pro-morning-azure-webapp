@@ -5,178 +5,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morningstar Demos</title>
-    <!-- Google Fonts for modern typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-
     <style>
+        /* Custom styling for header background */
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f5f7fa;
-            color: #333;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
         }
 
-        /* Hero Section */
         header {
-            background: url('{{ url_for('static', filename='images/hero-bg.jpg') }}') no-repeat center center/cover;
+            background: linear-gradient(90deg, rgba(0, 123, 255, 1) 0%, rgba(255, 193, 7, 1) 100%);
+            padding: 2rem 0;
             color: white;
-            padding: 4rem 0;
-            text-align: center;
-            position: relative;
         }
 
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
+        header img {
+            max-width: 150px;
+            height: auto;
         }
 
-        header .container {
-            position: relative;
-            z-index: 1;
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
         }
 
-        header h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+        .content {
+            padding: 2rem 0;
         }
 
-        header p {
+        .btn-custom {
+            padding: 0.75rem 1.5rem;
             font-size: 1.25rem;
-            margin-bottom: 2rem;
+            transition: background-color 0.3s ease;
         }
 
-        /* Cards Section */
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+
         .card {
             border: none;
-            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .card h5 {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.25rem;
+            font-weight: bold;
         }
 
         .card p {
-            font-size: 1rem;
-            color: #666;
+            color: #6c757d;
         }
 
-        .card .btn-custom {
-            padding: 0.75rem 1.5rem;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .card .btn-custom:hover {
-            background-color: #0056b3;
-        }
-
-        /* Footer Section */
         footer {
+            margin-top: 2rem;
+            padding: 1rem 0;
             background-color: #343a40;
             color: white;
-            padding: 2rem 0;
             text-align: center;
-        }
-
-        footer a {
-            color: white;
-            margin: 0 1rem;
-        }
-
-        .social-icons {
-            font-size: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .social-icons a {
-            margin: 0 10px;
-            color: #ddd;
-            transition: color 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: #fff;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Hero Section -->
-    <header>
-        <div class="container">
-            <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/morningstar-icon.svg') }}" alt="Morningstar Logo" width="150" height="150">
-            <h1>Welcome to Morningstar Demos</h1>
-            <p class="lead">Explore the power of AI through our interactive tools.</p>
-            <button class="btn btn-primary btn-lg px-5">Get Started</button>
-        </div>
+    <!-- Header Section -->
+    <header class="text-center">
+        <img src="{{ url_for('static', filename='images/morningstar-icon.svg') }}" alt="Morningstar Logo">
+        <h1>Welcome to Our Demos</h1>
+        <p class="lead">Explore the power of AI through our interactive tools.</p>
     </header>
 
     <!-- Content Section -->
-    <div class="container my-5">
+    <div class="container content">
         <div class="row text-center">
             <!-- SQL Chatbot Card -->
             <div class="col-md-4 my-3">
-                <div class="card p-4">
-                    <img src="{{ url_for('static', filename='images/sql-chatbot-icon.svg') }}" alt="SQL Chatbot" width="60" class="mb-3">
-                    <h5 class="card-title">SQL Chatbot</h5>
-                    <p class="card-text">Interact with our intelligent chatbot that can help you query SQL databases.</p>
-                    <button class="btn btn-primary btn-custom" onclick="location.href='/sql-chatbot'">Explore</button>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">SQL Chatbot</h5>
+                        <p class="card-text">Interact with our intelligent chatbot that can help you query SQL databases.</p>
+                        <button class="btn btn-primary btn-custom" onclick="location.href='/sql-chatbot'">Explore</button>
+                    </div>
                 </div>
             </div>
 
             <!-- PDF Narrator Card -->
             <div class="col-md-4 my-3">
-                <div class="card p-4">
-                    <img src="{{ url_for('static', filename='images/pdf-narrator-icon.svg') }}" alt="PDF Narrator" width="60" class="mb-3">
-                    <h5 class="card-title">PDF Narrator</h5>
-                    <p class="card-text">Convert PDFs into narrated summaries and gain insights quickly.</p>
-                    <button class="btn btn-success btn-custom" onclick="location.href='/pdf-narrator'">Explore</button>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">PDF Narrator</h5>
+                        <p class="card-text">Convert PDFs into narrated summaries and gain insights quickly.</p>
+                        <button class="btn btn-success btn-custom" onclick="location.href='/pdf-narrator'">Explore</button>
+                    </div>
                 </div>
             </div>
 
             <!-- PowerBI Demo Card -->
             <div class="col-md-4 my-3">
-                <div class="card p-4">
-                    <img src="{{ url_for('static', filename='images/powerbi-icon.svg') }}" alt="PowerBI Demo" width="60" class="mb-3">
-                    <h5 class="card-title">PowerBI Demo</h5>
-                    <p class="card-text">Visualize, analyze, and chat with data in PowerBI.</p>
-                    <button class="btn btn-warning btn-custom" onclick="location.href='/powerbi-demo'">Explore</button>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">PowerBI Demo</h5>
+                        <p class="card-text">Visualize and analyze data with PowerBI.</p>
+                        <button class="btn btn-warning btn-custom" onclick="location.href='/powerbi-demo'">Explore</button>
+                    </div>
                 </div>
             </div>
 
             <!-- Azure ETF Ratings Chatbot Card -->
             <div class="col-md-4 my-3">
-                <div class="card p-4">
-                    <img src="{{ url_for('static', filename='images/etf-ratings-icon.svg') }}" alt="ETF Ratings Chatbot" width="60" class="mb-3">
-                    <h5 class="card-title">Azure ETF Ratings Chatbot</h5>
-                    <p class="card-text">Ask questions about ETF ratings and get AI-driven responses.</p>
-                    <button class="btn btn-info btn-custom" onclick="location.href='/azure-etf-ratings-chatbot'">Explore</button>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Azure ETF Ratings Chatbot</h5>
+                        <p class="card-text">Ask questions about ETF ratings and get data-driven responses.</p>
+                        <button class="btn btn-info btn-custom" onclick="location.href='/azure-etf-ratings-chatbot'">Explore</button>
+                    </div>
                 </div>
             </div>
 
             <!-- Azure ETF Returns Chatbot Card -->
             <div class="col-md-4 my-3">
-                <div class="card p-4">
-                    <img src="{{ url_for('static', filename='images/etf-returns-icon.svg') }}" alt="ETF Returns Chatbot" width="60" class="mb-3">
-                    <h5 class="card-title">Azure ETF Returns Chatbot</h5>
-                    <p class="card-text">Retrieve detailed ETF return information quickly and easily.</p>
-                    <button class="btn btn-dark btn-custom" onclick="location.href='/azure-etf-returns-chatbot'">Explore</button>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Azure ETF Returns Chatbot</h5>
+                        <p class="card-text">Retrieve detailed ETF return information quickly and easily.</p>
+                        <button class="btn btn-dark btn-custom" onclick="location.href='/azure-etf-returns-chatbot'">Explore</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -187,8 +149,6 @@
         <p>2024 Morningstar, Microsoft, & Protiviti.</p>
     </footer>
 
-    <!-- FontAwesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
