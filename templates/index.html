@@ -1,30 +1,144 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-    <title>Hello - Morningstar Demos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morningstar Demos</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <style>
+        /* Custom styling for header background */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(255,193,7,1) 100%);
+            padding: 2rem 0;
+            color: white;
+        }
+
+        header img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .content {
+            padding: 2rem 0;
+        }
+
+        .btn-custom {
+            padding: 0.75rem 1.5rem;
+            font-size: 1.25rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        .card h5 {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 2rem;
+            padding: 1rem 0;
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+        }
+
+    </style>
 </head>
 <body>
-    <main>
-        <div class="px-4 py-3 my-2 text-center">
+
+    <!-- Header Section -->
+    <header class="text-center">
+        <img src="{{ url_for('static', filename='images/morningstar-icon.svg') }}" alt="Morningstar Logo">
+        <h1>Welcome to Our Demos</h1>
+        <p class="lead">Explore the power of data through our interactive tools.</p>
+    </header>
+
+    <!-- Content Section -->
+    <div class="container content">
+        <div class="row text-center">
             
-            <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/morningstar-icon.svg') }}" alt="Morningstar Logo" width="290" height="290"/>
-
-            <h1 class="display-6 fw-bold text-danger">Welcome to Our Demos</h1>
-        </div>
-
-        <div class="col-md-6 mx-auto text-center">
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center my-2">
-                
-                <button class="btn btn-primary btn-lg px-4 gap-3" onclick="location.href='/sql-chatbot'">SQL Chatbot</button>
-                <button class="btn btn-success btn-lg px-4 gap-3" onclick="location.href='/pdf-narrator'">PDF Narrator</button>
-                <button class="btn btn-warning btn-lg px-4 gap-3" onclick="location.href='/powerbi-demo'">PowerBI Demo</button>
-                <button class="btn btn-info btn-lg px-4 gap-3" onclick="location.href='/azure-etf-ratings-chatbot'">Azure ETF Ratings Chatbot</button>
-                <button class="btn btn-dark btn-lg px-4 gap-3" onclick="location.href='/azure-etf-returns-chatbot'">Azure ETF Returns Chatbot</button>
-
+            <!-- SQL Chatbot Card -->
+            <div class="col-md-4 my-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">SQL Chatbot</h5>
+                        <p class="card-text">Interact with our intelligent chatbot that can help you query SQL databases.</p>
+                        <button class="btn btn-primary btn-custom" onclick="location.href='/sql-chatbot'">Explore</button>
+                    </div>
+                </div>
             </div>
+
+            <!-- PDF Narrator Card -->
+            <div class="col-md-4 my-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">PDF Narrator</h5>
+                        <p class="card-text">Convert PDFs into narrated summaries and gain insights quickly.</p>
+                        <button class="btn btn-success btn-custom" onclick="location.href='/pdf-narrator'">Explore</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PowerBI Demo Card -->
+            <div class="col-md-4 my-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">PowerBI Demo</h5>
+                        <p class="card-text">Visualize and analyze data with PowerBI.</p>
+                        <button class="btn btn-warning btn-custom" onclick="location.href='/powerbi-demo'">Explore</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Azure ETF Ratings Chatbot Card -->
+            <div class="col-md-4 my-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Azure ETF Ratings Chatbot</h5>
+                        <p class="card-text">Ask questions about ETF ratings and get data-driven responses.</p>
+                        <button class="btn btn-info btn-custom" onclick="location.href='/azure-etf-ratings-chatbot'">Explore</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Azure ETF Returns Chatbot Card -->
+            <div class="col-md-4 my-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Azure ETF Returns Chatbot</h5>
+                        <p class="card-text">Retrieve detailed ETF return information quickly and easily.</p>
+                        <button class="btn btn-dark btn-custom" onclick="location.href='/azure-etf-returns-chatbot'">Explore</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </main>      
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>2024 Morningstar, Microsoft, & Protiviti.</p>
+    </footer>
+
 </body>
 </html>
