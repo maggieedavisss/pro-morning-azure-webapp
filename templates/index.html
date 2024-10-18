@@ -23,14 +23,14 @@
         }
 
         .logo {
-            width: 100px; /* Same size for all logos */
+            width: 120px; /* Increased size for all logos */
             height: auto;
         }
 
         /* Add more space between logos */
-        .mx-4 {
-            margin-left: 2rem;
-            margin-right: 2rem;
+        .mx-5 {
+            margin-left: 3rem;  /* Increased margin for more space */
+            margin-right: 3rem; /* Increased margin for more space */
         }
 
         .content {
@@ -75,10 +75,10 @@
     <header class="text-center">
         <div class="d-flex justify-content-center align-items-center">
             <img src="{{ url_for('static', filename='images/morningstar-icon.svg') }}" alt="Morningstar Logo" class="logo">
-            <img src="{{ url_for('static', filename='images/protiviti-icon.svg') }}" alt="Protiviti Logo" class="logo mx-4">
+            <img src="{{ url_for('static', filename='images/protiviti-icon.svg') }}" alt="Protiviti Logo" class="logo mx-5">
             <img src="{{ url_for('static', filename='images/microsoft-icon.svg') }}" alt="Microsoft Logo" class="logo">
         </div>
-        <h1>Welcome to Our Demos</h1>
+        <h1>Welcome to Your Sandbox</h1>
         <p class="lead">Explore the power of AI through our interactive tools.</p>
     </header>
 
