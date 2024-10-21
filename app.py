@@ -34,7 +34,7 @@ def azure_etf_returns_chatbot():
     return redirect("https://morningstar-returns.azurewebsites.net/")  
 
 @app.route('/financial-literacy-chatbots')
-def azure_etf_returns_chatbot():
+def financial_literacy_chatbots():
     return redirect("https://financial-literacy.azurewebsites.net/")
 
 if __name__ == '__main__':
