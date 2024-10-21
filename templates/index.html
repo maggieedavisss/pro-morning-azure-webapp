@@ -1,14 +1,11 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morningstar Demos</title>
+    <title>Financial Education Chatbots</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    
-    <!-- Inline CSS -->
     <style>
         /* Custom styling for header background */
         body {
@@ -17,20 +14,19 @@
         }
 
         header {
-            background: linear-gradient(90deg, rgba(0, 123, 255, 1) 0%, rgba(255, 193, 7, 1) 100%);
+            background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(255,193,7,1) 100%);
             padding: 2rem 0;
             color: white;
         }
 
-        .logo {
-            width: 120px; /* Increased size for all logos */
+        header img {
+            max-width: 150px;
             height: auto;
         }
 
-        /* Add more space between logos */
-        .mx-5 {
-            margin-left: 3rem;  /* Increased margin for more space */
-            margin-right: 3rem; /* Increased margin for more space */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
         }
 
         .content {
@@ -68,77 +64,63 @@
 
     </style>
 </head>
-
 <body>
 
     <!-- Header Section -->
     <header class="text-center">
-        <div class="d-flex justify-content-center align-items-center">
-            <img src="{{ url_for('static', filename='images/morningstar-icon.svg') }}" alt="Morningstar Logo" class="logo">
-            <img src="{{ url_for('static', filename='images/protiviti-icon.svg') }}" alt="Protiviti Logo" class="logo mx-5">
-            <img src="{{ url_for('static', filename='images/microsoft-icon.svg') }}" alt="Microsoft Logo" class="logo">
-        </div>
-        <h1>Welcome to Your Sandbox</h1>
-        <p class="lead">Explore the power of AI through our interactive tools.</p>
+        <img src="{{ url_for('static', filename='images/morningstar-icon.svg') }}" alt="Morningstar Logo">
+        <h1>Financial Literacy Chatbots</h1>
+        <p class="lead">Learn about finance leveraging the power of AI through our interactive tools.</p>
     </header>
 
     <!-- Content Section -->
     <div class="container content">
         <div class="row text-center">
-            <!-- SQL Chatbot Card -->
+            
+            <!-- ETF Chatbot Card -->
             <div class="col-md-4 my-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">SQL Chatbot</h5>
-                        <p class="card-text">Interact with our intelligent chatbot that can help you query SQL databases.</p>
+                        <h5 class="card-title">ETF Chatbot</h5>
+                        <p class="card-text">Interact with our intelligent chatbot to learn about exchange traded funds.</p>
                         <button class="btn btn-primary btn-custom" onclick="location.href='/sql-chatbot'">Explore</button>
                     </div>
                 </div>
             </div>
 
-            <!-- PDF Narrator Card -->
+            <!-- Morningstar Card -->
             <div class="col-md-4 my-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">PDF Narrator</h5>
-                        <p class="card-text">Convert PDFs into narrated summaries and gain insights quickly.</p>
+                        <h5 class="card-title">Morningstar Chatbot</h5>
+                        <p class="card-text">Learn more about Morningstar.</p>
                         <button class="btn btn-success btn-custom" onclick="location.href='/pdf-narrator'">Explore</button>
                     </div>
                 </div>
             </div>
 
-            <!-- PowerBI Demo Card -->
+            <!-- Financial Literacy Card -->
             <div class="col-md-4 my-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">PowerBI Demo</h5>
-                        <p class="card-text">Visualize and analyze data with PowerBI.</p>
+                        <h5 class="card-title">Financial Literacy Chatbot</h5>
+                        <p class="card-text">Ask this chatbot anything you’d like about financial literacy and get the insights you need.</p>
                         <button class="btn btn-warning btn-custom" onclick="location.href='/powerbi-demo'">Explore</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Azure ETF Ratings Chatbot Card -->
+            <!-- Stocks and Bonds Card -->
             <div class="col-md-4 my-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Azure ETF Ratings Chatbot</h5>
-                        <p class="card-text">Ask questions about ETF ratings and get data-driven responses.</p>
-                        <button class="btn btn-info btn-custom" onclick="location.href='/azure-etf-ratings-chatbot'">Explore</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Azure ETF Returns Chatbot Card -->
-            <div class="col-md-4 my-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Azure ETF Returns Chatbot</h5>
-                        <p class="card-text">Retrieve detailed ETF return information quickly and easily.</p>
+                        <h5 class="card-title">Stocks and Bonds Chatbot</h5>
+                        <p class="card-text">Retrieve detailed information about stocks and bonds quickly and easily.</p>
                         <button class="btn btn-dark btn-custom" onclick="location.href='/azure-etf-returns-chatbot'">Explore</button>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -148,5 +130,4 @@
     </footer>
 
 </body>
-
 </html>
