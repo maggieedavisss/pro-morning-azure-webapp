@@ -1,11 +1,14 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Education Chatbots</title>
+    <title>Morningstar Demos</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    
+    <!-- Inline CSS -->
     <style>
         /* Custom styling for header background */
         body {
@@ -14,19 +17,20 @@
         }
 
         header {
-            background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(255,193,7,1) 100%);
+            background: linear-gradient(90deg, rgba(0, 123, 255, 1) 0%, rgba(255, 193, 7, 1) 100%);
             padding: 2rem 0;
             color: white;
         }
 
-        header img {
-            max-width: 150px;
+        .logo {
+            width: 120px; /* Increased size for all logos */
             height: auto;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
+        /* Add more space between logos */
+        .mx-5 {
+            margin-left: 3rem;  /* Increased margin for more space */
+            margin-right: 3rem; /* Increased margin for more space */
         }
 
         .content {
@@ -64,36 +68,74 @@
 
     </style>
 </head>
+
 <body>
 
     <!-- Header Section -->
     <header class="text-center">
-        <h1>Financial Literacy Chatbots</h1>
-        <p class="lead">Learn about finance through our interactive AI chatbots.</p>
+        <div class="d-flex justify-content-center align-items-center">
+            <img src="{{ url_for('static', filename='images/morningstar-icon.svg') }}" alt="Morningstar Logo" class="logo">
+            <img src="{{ url_for('static', filename='images/protiviti-icon.svg') }}" alt="Protiviti Logo" class="logo mx-5">
+            <img src="{{ url_for('static', filename='images/microsoft-icon.svg') }}" alt="Microsoft Logo" class="logo">
+        </div>
+        <h1>Welcome to Your Sandbox</h1>
+        <p class="lead">Explore the power of AI through our interactive tools.</p>
     </header>
 
     <!-- Content Section -->
     <div class="container content">
         <div class="row text-center">
-            
-            <!-- ETF Chatbot Card -->
+            <!-- SQL Chatbot Card -->
             <div class="col-md-4 my-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">ETF Chatbot</h5>
-                        <p class="card-text">Interact with our intelligent chatbot to learn about exchange traded funds.</p>
-                        <button class="btn btn-primary btn-custom" onclick="location.href='/etf-chatbot'">Explore</button>
+                        <h5 class="card-title">SQL Chatbot</h5>
+                        <p class="card-text">Interact with our intelligent chatbot that can help you query SQL databases.</p>
+                        <button class="btn btn-primary btn-custom" onclick="location.href='/sql-chatbot'">Explore</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Morningstar Card -->
+            <!-- PDF Narrator Card -->
             <div class="col-md-4 my-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Morningstar Chatbot</h5>
-                        <p class="card-text">Discover more about Morningstar with our interactive chatbot, ready to answer all your questions.</p>
-                        <button class="btn btn-success btn-custom" onclick="location.href='/morningstar-chatbot'">Explore</button>
+                        <h5 class="card-title">PDF Narrator</h5>
+                        <p class="card-text">Convert PDFs into narrated summaries and gain insights quickly.</p>
+                        <button class="btn btn-success btn-custom" onclick="location.href='/pdf-narrator'">Explore</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Power BI Demo Card -->
+            <div class="col-md-4 my-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Power BI Demo</h5>
+                        <p class="card-text">Visualize and analyze data with Power BI.</p>
+                        <button class="btn btn-warning btn-custom" onclick="location.href='/power-bi-demo'">Explore</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Azure ETF Ratings Chatbot Card -->
+            <div class="col-md-4 my-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Azure ETF Ratings Chatbot</h5>
+                        <p class="card-text">Ask questions about ETF ratings and get data-driven responses.</p>
+                        <button class="btn btn-info btn-custom" onclick="location.href='/azure-etf-ratings-chatbot'">Explore</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Azure ETF Returns Chatbot Card -->
+            <div class="col-md-4 my-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Azure ETF Returns Chatbot</h5>
+                        <p class="card-text">Retrieve detailed ETF return information quickly and easily.</p>
+                        <button class="btn btn-dark btn-custom" onclick="location.href='/azure-etf-returns-chatbot'">Explore</button>
                     </div>
                 </div>
             </div>
@@ -102,15 +144,21 @@
             <div class="col-md-4 my-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Financial Literacy Chatbot</h5>
-                        <p class="card-text">Ask this chatbot anything you’d like about financial literacy and get the insights you need.</p>
-                        <button class="btn btn-dark btn-custom" onclick="location.href='/financial-literacy-chatbot'">Explore</button>
+                        <h5 class="card-title">Azure Financial Literacy Chatbot</h5>
+                        <p class="card-text">Learn about budgeting, saving, and investing with our interactive chatbot.</p>
+                        <button class="btn btn-secondary btn-custom" onclick="location.href='/financial-literacy-chatbot'">Explore</button>
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
+    </div>            
+
+    <!-- Footer Section -->
+    <footer>
+        <p>2024 Morningstar, Microsoft, & Protiviti.</p>
+    </footer>
 
 </body>
+
 </html>
+
