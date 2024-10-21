@@ -15,7 +15,7 @@ def favicon():
 
 @app.route('/etf-chatbot')
 def sql_chatbot():
-    return redirect("https://python-flask-sqlbot-app.azurewebsites.net/")
+    return redirect("https://etf-beginners.azurewebsites.net/")
 
 @app.route('/morningstar-chatbot')
 def pdf_narrator():
@@ -23,11 +23,11 @@ def pdf_narrator():
 
 @app.route('/financial-literacy-chatbot')
 def powerbi_demo():
-    return redirect("https://app.powerbi.com/groups/me/apps/1f7cd510-8c93-4e5f-8cef-312f3bbf0d01/reports/363ee684-634c-43da-b040-8539933cbf13/42ba0471426783ecc124?ctid=978794b6-9c6b-4307-ada4-42e472e0e336&experience=power-bi")
+    return redirect("")
 
 @app.route('/stocks-and-bonds-chatbot')
 def azure_etf_ratings_chatbot():
-    return redirect("https://morningstar-ratings.azurewebsites.net/")  
+    return redirect("")  
 
 if __name__ == '__main__':
     app.run(debug=True)
