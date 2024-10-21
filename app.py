@@ -19,7 +19,7 @@ def sql_chatbot():
 
 @app.route('/morningstar-chatbot')
 def pdf_narrator():
-    return redirect("https://gen-ai-web-app.azurewebsites.net/document_insight_via_chat")  
+    return redirect("https://learn-about-morningstar.azurewebsites.net/)  
 
 @app.route('/financial-literacy-chatbot')
 def powerbi_demo():
