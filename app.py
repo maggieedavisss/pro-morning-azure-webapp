@@ -13,11 +13,11 @@ def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
-@app.route('/sql-chatbot')
+@app.route('/etf-chatbot')
 def sql_chatbot():
     return redirect("https://python-flask-sqlbot-app.azurewebsites.net/")
 
-@app.route('/pdf-narrator')
+@app.route('/morningstar-chatbot')
 def pdf_narrator():
     return redirect("https://gen-ai-web-app.azurewebsites.net/document_insight_via_chat")  
 
