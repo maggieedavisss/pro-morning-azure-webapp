@@ -21,7 +21,7 @@ def sql_chatbot():
 def pdf_narrator():
     return redirect("https://gen-ai-web-app.azurewebsites.net/document_insight_via_chat")  
 
-@app.route('/powerbi-demo')
+@app.route('/financial-literacy-chatbot')
 def powerbi_demo():
     return redirect("https://app.powerbi.com/groups/me/apps/1f7cd510-8c93-4e5f-8cef-312f3bbf0d01/reports/363ee684-634c-43da-b040-8539933cbf13/42ba0471426783ecc124?ctid=978794b6-9c6b-4307-ada4-42e472e0e336&experience=power-bi")
 
