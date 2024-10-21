@@ -25,9 +25,5 @@ def pdf_narrator():
 def powerbi_demo():
     return redirect("")
 
-@app.route('/stocks-and-bonds-chatbot')
-def azure_etf_ratings_chatbot():
-    return redirect("")  
-
 if __name__ == '__main__':
     app.run(debug=True)
