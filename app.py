@@ -19,11 +19,11 @@ def sql_chatbot():
 
 @app.route('/morningstar-chatbot')
 def pdf_narrator():
-    return redirect("https://learn-about-morningstar.azurewebsites.net/)  
+    return redirect("https://learn-about-morningstar.azurewebsites.net/")  
 
 @app.route('/financial-literacy-chatbot')
 def powerbi_demo():
-    return redirect("")
+    return redirect("https://financial-education.azurewebsites.net/")
 
 if __name__ == '__main__':
     app.run(debug=True)
